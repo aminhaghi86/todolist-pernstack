@@ -11,9 +11,9 @@ function Header() {
 	};
 	return (
 		<div className="header-container">
-			<Link to={"/"}>
+			{/* <Link to={"/"}>
 				<h1>TodoList App</h1>
-			</Link>
+			</Link> */}
 			<nav>
 				{user && (
 					<div className="navbar-container-logout">

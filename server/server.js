@@ -3,8 +3,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const { sequelize } = require("./model/task");
-const tasks = require("./routes/tasks");
 const users = require("./routes/users");
+const schedules = require('./routes/schedules')
 const main = async () => {
 	const app = express();
 	const port = process.env.SERVERPORT || 8001;
@@ -21,8 +21,8 @@ const main = async () => {
 	app.use(morgan("tiny"));
 	app.use(bodyParser.json());
 	// CRUD
-	tasks.setupRoutes(app);
 	users.setupRoutes(app);
+	schedules.setupRoutes(app)
 	//
 	app.listen(port, () => {
 		console.log(`Example app listening on port ${port}`);
